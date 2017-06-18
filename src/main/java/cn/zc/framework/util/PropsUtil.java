@@ -40,4 +40,22 @@ public final class PropsUtil {
         return props;
     }
 
+    /**
+     * get string property (default value is "")
+     * @param props
+     * @param key
+     * @return
+     */
+    public static String getString(Properties props, String key) {
+        return getString(props, key, "");
+    }
+
+    public static String getString(Properties props, String key, String defaultValue) {
+        String value = defaultValue;
+        if (props.containsKey(key)) {
+            value = props.getProperty(key);
+        }
+        return value;
+    }
+
 }
