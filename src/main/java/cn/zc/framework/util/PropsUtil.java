@@ -58,4 +58,16 @@ public final class PropsUtil {
         return value;
     }
 
+    public static int getInt(Properties props, String key) {
+        return getInt(props, key, 0);
+    }
+
+    public static int getInt(Properties props, String key, int defaultValue) {
+        int value = defaultValue;
+        if (props.contains(key)) {
+            value = CastUtil.getInt(props.getProperty(key));
+        }
+        return value;
+    }
+
 }
