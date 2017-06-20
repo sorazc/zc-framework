@@ -38,6 +38,11 @@ public class ClassUtil {
         return cls;
     }
 
+    /**
+     * get class set from package name
+     * @param packageName
+     * @return
+     */
     public static Set<Class<?>> getClassSet(String packageName) {
         Set<Class<?>> classSet = new HashSet<>();
         try {
