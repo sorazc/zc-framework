@@ -7,12 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="zc-framework" />
-        <module name="zc_framework" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="zc-framework" target="1.5" />
-      <module name="zc_framework" target="1.5" />
+      <module name="zc-framework" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

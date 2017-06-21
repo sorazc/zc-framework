@@ -1,6 +1,5 @@
 package cn.zc.framework.util;
 
-import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -59,20 +58,14 @@ public final class PropsUtil {
         return value;
     }
 
-    /**
-     * get int property (default value is 0)
-     * @param props
-     * @param key
-     * @return
-     */
     public static int getInt(Properties props, String key) {
         return getInt(props, key, 0);
     }
 
     public static int getInt(Properties props, String key, int defaultValue) {
         int value = defaultValue;
-        if (props.containsKey(key)) {
-            value = CastUtil.castInt(props.getProperty(key));
+        if (props.contains(key)) {
+            value = CastUtil.getInt(props.getProperty(key));
         }
         return value;
     }
