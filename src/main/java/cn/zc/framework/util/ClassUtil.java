@@ -4,7 +4,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import javax.servlet.annotation.WebServlet;
 import java.io.File;
 import java.io.FileFilter;
 import java.io.IOException;
@@ -41,7 +40,7 @@ public class ClassUtil {
     /**
      * get class set from package name
      * @param packageName
-     * @return
+     * @return class set
      */
     public static Set<Class<?>> getClassSet(String packageName) {
         Set<Class<?>> classSet = new HashSet<>();
