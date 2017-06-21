@@ -10,7 +10,10 @@ public class CastUtil {
     public static int getInt(String str) {
         return getInt(str, 0);
     }
-
+    
+    /**
+     *
+     */
     public static int getInt(String str, int defaultValue) {
         int value = defaultValue;
         if (StringUtils.isNumeric(str)) {
