@@ -6,16 +6,10 @@ import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
 /**
- * Contoller's method annotiation
- * Created by zc on 2017/6/21 0021.
+ * ioc annotation
+ * Created by zc on 2017/6/21.
  */
-@Target(ElementType.METHOD)
+@Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
-public @interface Action {
-
-    /**
-     * request url
-     */
-    String value();
-
+public @interface Inject {
 }
