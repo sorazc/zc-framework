@@ -106,7 +106,7 @@ public class DispatcherServlet extends HttpServlet {
     @Override
     public void init(ServletConfig config) throws ServletException {
         HelperLoader.init();
-        ServletContext servletContext = getServletConfig().getServletContext();
+        ServletContext servletContext = config.getServletContext();
 
         ServletRegistration jspServlet = servletContext.getServletRegistration("jsp");
         jspServlet.addMapping(ConfigHelper.getAppJspPath() + "*");

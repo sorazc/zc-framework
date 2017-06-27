@@ -48,6 +48,9 @@ public class ReflectionUtil {
         } catch (InvocationTargetException e) {
             LOGGER.error("new instance failure", e);
             throw new RuntimeException(e);
+        } catch (Exception e) {
+            LOGGER.error("unknown exeption", e);
+            throw new RuntimeException(e);
         }
         return result;
     }

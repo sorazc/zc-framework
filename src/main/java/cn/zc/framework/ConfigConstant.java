@@ -5,7 +5,7 @@ package cn.zc.framework;
  */
 public interface ConfigConstant {
 
-    String CONFIG_FILE = "zc.framework";
+    String CONFIG_FILE = "zc.properties";
 
     String JDBC_DRIVER = "zc.framework.jdbc.driver";
     String JDBC_URL = "zc.framework.jdbc.url";
