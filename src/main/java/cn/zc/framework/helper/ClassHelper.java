@@ -4,6 +4,7 @@ import cn.zc.framework.annotation.Controller;
 import cn.zc.framework.annotation.Service;
 import cn.zc.framework.util.ClassUtil;
 
+import java.lang.annotation.Annotation;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -30,23 +31,14 @@ public final class ClassHelper {
      * @return set of service class
      */
     public static Set<Class<?>> getServiceClassSet() {
-        Set<Class<?>> classSet = new HashSet<>();
-        for (Class<?> cls : CLASS_SET) {
-            if (cls.isAnnotationPresent(Service.class)) {
-                classSet.add(cls);
-            }
-        }
-        return classSet;
+        return getClassSetByAnnotation(Service.class);
     }
 
+    /**
+     * @return set of controller class
+     */
     public static Set<Class<?>> getControllerClassSet() {
-        Set<Class<?>> classSet = new HashSet<>();
-        for (Class<?> cls : CLASS_SET) {
-            if (cls.isAnnotationPresent(Controller.class)) {
-                classSet.add(cls);
-            }
-        }
-        return classSet;
+        return getClassSetByAnnotation(Controller.class);
     }
 
     /**
@@ -57,6 +49,26 @@ public final class ClassHelper {
         Set<Class<?>> classSet = new HashSet<>();
         classSet.addAll(getServiceClassSet());
         classSet.addAll(getControllerClassSet());
+        return classSet;
+    }
+
+    public static Set<Class<?>> getClassSetBySuper(Class<?> superClass) {
+        Set<Class<?>> classSet = new HashSet<>();
+        for (Class<?> cls : CLASS_SET) {
+            if (cls.isAssignableFrom(superClass) && !superClass.equals(cls)) {
+                classSet.add(cls);
+            }
+        }
+        return classSet;
+    }
+
+    public static Set<Class<?>> getClassSetByAnnotation(Class<? extends Annotation> annotationClass) {
+        Set<Class<?>> classSet = new HashSet<>();
+        for (Class<?> cls : CLASS_SET) {
+            if (cls.isAnnotationPresent(annotationClass)) {
+                classSet.add(cls);
+            }
+        }
         return classSet;
     }
 
